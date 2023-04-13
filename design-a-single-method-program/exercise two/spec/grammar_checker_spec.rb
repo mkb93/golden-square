@@ -1,6 +1,11 @@
 require './lib/grammar_checker.rb'
 
 RSpec.describe "grammar_checker" do
+  context "checking if i get the right response for correct sentence" do
+    it "passes when no error" do
+      expect(grammar_checker('The cow eats the grass.')).to eq "Correct"
+    end
+  end
   context "testing fails" do
     it "fails if input is nil" do
       expect{grammar_checker(nil)}.to raise_error "please enter a string"
