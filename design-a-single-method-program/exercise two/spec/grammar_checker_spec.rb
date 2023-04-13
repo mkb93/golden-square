@@ -11,5 +11,11 @@ RSpec.describe "grammar_checker" do
     it "fails if input is an integer" do
       expect{ grammar_checker(5)}.to raise_error "please enter a string"
     end
+    it "fails if inputs first letter is not a capital" do
+      expect{ grammar_checker('the cow eats the grass.')}.to raise_error 'no capital letter'
+    end
+    it "fails if input final letter is not approved punctuation" do
+      expect{ grammar_checker('The cow eats the grass')}. to raise_error 'punctuation error'
+    end
   end
 end
