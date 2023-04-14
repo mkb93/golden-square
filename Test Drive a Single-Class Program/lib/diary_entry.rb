@@ -23,6 +23,7 @@ class DiaryEntry
     end
   
     def reading_chunk(wpm, minutes)
+        fail "enter input higher than zero" if wpm <= 0 || minutes <= 0
       words_read = wpm *minutes
       start_at = @position
       end_at = words_read

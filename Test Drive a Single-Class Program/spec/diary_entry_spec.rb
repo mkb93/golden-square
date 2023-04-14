@@ -50,6 +50,18 @@ RSpec.describe DiaryEntry do
         result = diary_entry.reading_chunk(1, 10)
         expect(result).to eq "word"
       end
+      it "returns a chunk of the content that can be read in the given time" do
+        diary_entry = DiaryEntry.new("word", "word words word")
+        diary_entry.reading_chunk(100, 10)
+        result = diary_entry.reading_chunk(2, 20)
+        expect(result).to eq "word words word"
+      end
     end  
+    context 'when reading speed is less than or 0' do
+      it 'fails with error' do
+        diary_entry = DiaryEntry.new("w","w w ww w")
+        expect{ diary_entry.reading_chunk(0,1)}.to raise_error "enter input higher than zero"
+      end
+    end
   end
 end
