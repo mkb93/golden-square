@@ -13,11 +13,11 @@ class DiaryEntry
     end
   
     def count_words
-      return @contents_length = @contents.split(' ').length
+      return @contents.split(' ').length
     end
   
     def reading_time(wpm) 
-      return @contents_length/wpm 
+      return count_words / wpm 
     end
   
     def reading_chunk(wpm, minutes) # `wpm` is an integer representing the number
