@@ -38,6 +38,18 @@ RSpec.describe DiaryEntry do
         result = diary_entry.reading_chunk(1, 1)
         expect(result).to eq "word"
       end
+      it "returns a chunk of the content that can be read in the given time" do
+        diary_entry = DiaryEntry.new("word", "word words word")
+        diary_entry.reading_chunk(1, 1)
+        result = diary_entry.reading_chunk(1, 2)
+        expect(result).to eq "words word"
+      end
+      it "returns a chunk of the content that can be read in the given time" do
+        diary_entry = DiaryEntry.new("word", "word words word")
+        diary_entry.reading_chunk(2, 1)
+        result = diary_entry.reading_chunk(1, 10)
+        expect(result).to eq "word"
+      end
     end  
   end
 end

@@ -24,11 +24,14 @@ class DiaryEntry
   
     def reading_chunk(wpm, minutes)
       words_read = wpm *minutes
-      if words_read >= count_words
-        return @contents
+      start_at = @position
+      end_at = words_read
+      chunk = @contents.split(' ')[start_at, end_at]
+      if end_at >= count_words
+        @position = 0
+      else
+        @position = end_at
       end
-       end_at = words_read
-       start_at = 0
-       return @contents.split(' ').slice(start_at,end_at).join('')
+      return chunk.join(' ')
     end
   end
