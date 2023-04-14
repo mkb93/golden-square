@@ -24,4 +24,20 @@ RSpec.describe DiaryEntry do
         expect{diary_entry.reading_time(0)}.to raise_error "reading speed has to be greater than 0"
     end
   end
+  describe "reading_chunk" do
+    context "when the contents is readable in a given time" do
+      it "returns the full string" do
+        diary_entry = DiaryEntry.new("word", "word word word")
+        result = diary_entry.reading_chunk(10, 1)
+        expect(result).to eq "word word word"
+      end
+    end
+    context "when the contents is not readable in the given time" do
+      it "returns a chunk of the content that can be read in the given time" do
+        diary_entry = DiaryEntry.new("word", "word word word")
+        result = diary_entry.reading_chunk(1, 1)
+        expect(result).to eq "word"
+      end
+    end  
+  end
 end
