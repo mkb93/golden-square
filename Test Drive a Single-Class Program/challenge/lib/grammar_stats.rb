@@ -4,7 +4,12 @@ class GrammarStats
     end
   
     def check(text) 
-        fail 'please enter a string' unless text.is_a?(String)
+      fail 'please enter a string' unless text.is_a?(String)
+      if (text[-1] == '?' || text[-1] == '!' || text[-1] == '.') && text[0].upcase == text[0]
+        return true
+      else
+        return false
+      end
       # Returns true or false depending on whether the text begins with a capital
       # letter and ends with a sentence-ending punctuation mark.
     end
