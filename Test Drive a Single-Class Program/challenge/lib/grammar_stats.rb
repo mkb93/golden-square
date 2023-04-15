@@ -1,9 +1,10 @@
 class GrammarStats
     def initialize
-      # ...
+    
     end
   
-    def check(text) # text is a string
+    def check(text) 
+        fail 'please enter a string' unless text.is_a?(String)
       # Returns true or false depending on whether the text begins with a capital
       # letter and ends with a sentence-ending punctuation mark.
     end
