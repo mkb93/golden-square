@@ -31,4 +31,39 @@ RSpec.describe GrammarStats do
         expect(result).to eq true
     end
   end
+  describe "#percentage_good method" do
+    it "returns 100 when no check tests have been done" do
+      stat = GrammarStats.new
+      expect(stat.percentage_good()).to eq 100
+    end
+    it "returns 50 when 1 check passed and 1 check failed" do
+        stat = GrammarStats.new
+        stat.check('Who are you!')
+        stat.check('Who are you')
+        expect(stat.percentage_good()).to eq 50
+      end
+    it "returns 20 if 4 checks failed and 1 passed" do
+        stat = GrammarStats.new
+        stat.check('Who are you')
+        stat.check('Who are you')
+        stat.check('Who are you')
+        stat.check('Who are you')
+        stat.check('Who are you!')
+        expect(stat.percentage_good()).to eq 20
+    end
+    it "returns 80 if 4 checks passed and 1 fails" do
+        stat = GrammarStats.new
+        stat.check('Who are you!')
+        stat.check('Who are you!')
+        stat.check('Who are you!')
+        stat.check('Who are you!')
+        stat.check('Who are you')
+        expect(stat.percentage_good()).to eq 80
+    end
+    it "returns 0 if check has 1 fails" do
+        stat = GrammarStats.new
+        stat.check('Who are you')
+        expect(stat.percentage_good()).to eq 0
+    end
+  end
 end
