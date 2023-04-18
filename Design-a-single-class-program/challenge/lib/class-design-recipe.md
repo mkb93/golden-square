@@ -3,34 +3,26 @@
 ## 1. Describe the Problem
 
 As a user
-So that I can keep track of my tasks
-I want a program that I can add todo tasks to and see a list of them.
-
-As a user
-So that I can focus on tasks to complete
-I want to mark tasks as complete and have them disappear from the list.
-
-the Class needs to have a method that collects inputted task and then outputs them in readable format
-have a method that allows you to change the status of a class from incomplete to complete
+So that I can keep track of my music listening
+I want to add tracks I've listened to and see a list of them.
 
 ## 2. Design the Class Interface
 
 _Include the initializer and public methods with all parameters and return values._
 
 ```ruby
-class TaskTracker 
-  def init
-  @task_array = []
+class MusicTracker
+  def initialize
+  @music_array = []
+
   end
 
-  def add_task (str)
+  def add_track (str)
+  #use this to add a string to the music array
   end
   
-  def show_tasks
-  end
-
-  def task_update(str, status)
-
+  def show_tracks
+  #use this method to show an array of music that you've listened too
   end
 end
 
@@ -43,24 +35,21 @@ _Make a list of examples of how the class will behave in different situations._
 # EXAMPLE
 
 # 1
-tasks = TaskTracker.new
-tasks.add_task('buy a car')
-expect(tasks.show_tasks()).to eq 'buy a car
+song = MusicTracker.new
+tasks.add_track('song by james cannon')
+expect(tasks.show_tasks()).to eq ['song by james cannon']
 # 2
-tasks = TaskTracker.new
-tasks.add_task('buy a car')
-tasks.add_task('buy a car')
-tasks.add_task('buy a car')
-expect(tasks.show_tasks()).to eq buy a car, buy a car, buy a car
-# 3
-tasks = TaskTracker.new
-tasks.add_task('buy a car')
-tasks.add_task('buy a dress')
-tasks.add_task('buy some fruit')
-tasks.task_update('buy a car', true)
-expect(tasks.show_tasks()).to eq 'buy a dress, buy some fruit'
-
-_Encode each example as a test. You can add to the above list as you go._
+song = MusicTracker.new
+song.add_track('buy a car by james cannon')
+song.add_track('buy a car by james cannon')
+song.add_track('buy a car by james cannon')
+expect(song.show_tracks()).to eq [buy a car by james cannon, buy a car by james cannon, buy a car by james cannon]
+#3
+song = MusicTracker.new
+expect(song.show_tracks).to raise_error 'no tracks added'
+#4 
+song = MusicTracker.new
+expect{song.add_track("")}.to raise_error "need to be a string longer than 0"
 
 ## 4. Implement the Behaviour
 
