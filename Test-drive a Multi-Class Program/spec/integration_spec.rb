@@ -25,5 +25,13 @@ RSpec.describe 'integration' do
         diary.add(diary_entry2.contents)
         expect(diary.count_words).to eq 9
     end
+    it "counts the words of all the entries" do
+        diary = Diary.new()
+        diary_entry1 = DiaryEntry.new('words', 'words not made by me')
+        diary_entry2 = DiaryEntry.new('words', 'words made by me')
+        diary.add(diary_entry1.contents)
+        diary.add(diary_entry2.contents)
+        expect(diary.count_words).to eq 9
+    end
   end
 end

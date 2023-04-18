@@ -13,4 +13,10 @@ RSpec.describe DiaryEntry do
       expect(diary_entry.count_wordz).to eq 7
     end
   end
+  context "#reading_time" do
+    it 'returns an upper estimate on how long it will take a user to finish reading this text' do
+      diary_entry = DiaryEntry.new('word', 'my favourite words live in the dungeon')
+      expect(diary_entry.reading_time(2)).to eq 4
+    end
+  end
 end

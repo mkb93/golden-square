@@ -1,22 +1,21 @@
 require 'diary_entry'
 class Diary
     def initialize
-      @diary_entries = [] 
+      @entries = [] 
     end
   
     def add(entry) 
-      @diary_entries << entry
+      @entries << entry
     end
   
     def all
-      return @diary_entries
+      return @entries
     end
   
     def count_words
-     return @diary_entries.each{ |str|
-     
-      # Returns the number of words in all diary entries
-      # HINT: This method should make use of the `count_words` method on DiaryEntry.
+     return @entries.map do |entry|
+      DiaryEntry.new('sd',entry).count_wordz
+     end.sum
     end
   
     def reading_time(wpm) # wpm is an integer representing
