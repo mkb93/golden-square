@@ -1,17 +1,20 @@
-# File: lib/diary.rb
+require 'diary_entry'
 class Diary
     def initialize
+      @diary_entries = [] 
     end
   
-    def add(entry) # entry is an instance of DiaryEntry
-      # Returns nothing
+    def add(entry) 
+      @diary_entries << entry
     end
   
     def all
-      # Returns a list of instances of DiaryEntry
+      return @diary_entries
     end
   
     def count_words
+     return @diary_entries.each{ |str|
+     
       # Returns the number of words in all diary entries
       # HINT: This method should make use of the `count_words` method on DiaryEntry.
     end
