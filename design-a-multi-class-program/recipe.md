@@ -124,13 +124,15 @@ diary.show_todo_list => []
 _Create examples, where appropriate, of the behaviour of each relevant class at
 a more granular level of detail._
 
+
 ```ruby
 # EXAMPLE
+todo test if it builds and if it completes
+mobilenumbers test if it list the numbers in the diary entry 
+diary_entry test if it returns the amount of time necessary to read it 
+diary test if it adds todos and diary entries then show relevant entries 
 
-# Constructs a track
-track = Track.new("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
-```
+
 
 _Encode each example as a test. You can add to the above list as you go._
 
