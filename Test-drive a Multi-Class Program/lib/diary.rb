@@ -14,7 +14,8 @@ class Diary
   
     def count_words
      return @entries.map do |entry|
-      DiaryEntry.new('sd',entry).count_wordz
+      entry.count_wordz
+      # DiaryEntry.new('sd',entry).count_wordz
      end.sum
     end
   
