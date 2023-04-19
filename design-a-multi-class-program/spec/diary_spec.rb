@@ -1,6 +1,6 @@
 require 'diary'
 
-RSpec.describe "Diary" do
+RSpec.describe Diary do
   context 'testing failures' do
     it 'fails if wpm is too slow' do
       diary = Diary.new

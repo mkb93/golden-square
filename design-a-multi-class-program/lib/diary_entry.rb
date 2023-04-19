@@ -12,6 +12,7 @@ class DiaryEntry
     end
   
     def reading_time(wpm)
+      fail "wpm needs to be greater than 0" unless wpm > 0
       return wpm * word_count
     end
 
