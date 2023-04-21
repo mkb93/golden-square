@@ -4,12 +4,13 @@ class Menu
     end
   
     def show_items
+      fail 'add something to the menu' unless @items.length > 0
       return @items.map do |item|
       "#{item.name} £#{item.price}"
     end
   end
     def add_item(item)
-      fail 'this is not a in the item class' unless item.is_a?(Item)
+    #   fail 'this is not a in the item class' unless item.is_a?(Item)  
       @items << item
     end
   

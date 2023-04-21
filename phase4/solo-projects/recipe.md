@@ -139,6 +139,9 @@ a more granular level of detail._
 ```ruby
 item test if it completes if it returns its name, amount and price and if quantity is reduced when one_less is called
 
+menu test if show items gives an aarray of price and name if it fails if array empty 
+test if add_item adds an item and if it fails if the item added is not an Item 
+test if available? shows true if quantity is greater than 0 if it returns false if 0 check if it fails if item is not on the menu
 
 
 
