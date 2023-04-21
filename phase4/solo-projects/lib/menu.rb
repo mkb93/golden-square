@@ -10,12 +10,12 @@ class Menu
     end
   end
     def add_item(item)
-    #   fail 'this is not a in the item class' unless item.is_a?(Item)  
+      fail 'this is not an item' unless item.is_a?(Item)  
       @items << item
     end
   
-    def available?(item, menu)
-      fail 'this is not on the menu' unless menu.include?(item)
+    def available?(item)
+      fail 'this is not on the menu' unless @items.include?(item)
       if item.quantity > 0
         return true
       else 
