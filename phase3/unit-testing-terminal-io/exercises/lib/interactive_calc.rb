@@ -5,15 +5,19 @@ class InteractiveCalculator
   end
 
   def run
-    fail 'enter a number' if true
     @io.puts 'enter a number'
-    num1 = @io.gets.chomp
-    fail 'enter a number' if num1.to_i == num1
+    num1 = get_number
     @io.puts 'enter another number'
-    num2 = @io.gets.chomp
-    fail 'enter a number' if num1.to_i == num1
+    num2 = get_number
     @io.puts 'here is your result'
     @io.puts "#{num1.to_i} - #{num2.to_i} = #{num1.to_i - num2.to_i}"
+  end
+
+  private
+  def get_number
+    response = @io.gets
+    return response.to_i if response.to_i.to_s == response
+    fail 'enter a number'
   end
 end
 
