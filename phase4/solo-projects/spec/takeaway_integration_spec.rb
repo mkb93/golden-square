@@ -11,12 +11,12 @@ RSpec.describe "Integration test for takeaway" do
     menu.add_item(item1)
     menu.add_item(item2)
     menu.add_item(item3)
-    expect(menu.show_items).to eq ["item1 £10.00", "item2 £20.00", "item3 £30.00"]
+    expect(menu.show_items).to eq ["item1 £10.0", "item2 £20.0", "item3 £30.0"]
     order = Order.new
-    order.add_to_order(item3)
-    order.add_to_order(item3)
-    order.add_to_order(item1)
-    expect(order.show_order).to eq ["item3: £30.00", "item3: £30:00", "item1: £10.00"]
-    expect(order.show_total_price).to eq "total price : £70.00"
+    order.add_to_order(item3,menu)
+    order.add_to_order(item3,menu)
+    order.add_to_order(item1,menu)
+    expect(order.show_order).to eq ["item3: £30.0", "item3: £30.0", "item1: £10.0"]
+    expect(order.show_total_price).to eq "total price : £70.0"
   end
 end

@@ -3,8 +3,7 @@ class Order
       @order = []
     end
     
-    def add_to_order(item)
-      fail 'item not available' unless item.available?
+    def add_to_order(item, menu)
       item.one_less
       @order << item
     end
@@ -13,6 +12,7 @@ class Order
       return @order.map do |item|
       "#{item.name}: £#{item.price}"
     end
+  end
   
     def show_total_price
       price =@order.map do |item|
@@ -20,4 +20,4 @@ class Order
       end.sum
       return "total price : £#{price}"
     end
-  end
+end

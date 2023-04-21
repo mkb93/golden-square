@@ -124,15 +124,11 @@ menu.add_item(item2)
 menu.add_item(item3)
 menu.show_items => ["item1 £10.00", "item2 £20.00", "item3 £30.00"]
 order = Order.new
-order.add_to_order(item3)
-order.add_to_order(item3)
-order.add_to_order(item1)
-order.show_order => ["item3: £30.00", "item3: £30:00", "item1: £10.00"]
+order.add_to_order(item3,menu)
+order.add_to_order(item3,menu)
+order.add_to_order(item1,menu)
+order.show_order => ["item3: £30.00", "item3: £30.00", "item1: £10.00"]
 order.show_total_price => "total price : £70.00"
-
-
-
-
 ```
 ## 4. Create Examples as Unit Tests
 
@@ -141,11 +137,8 @@ a more granular level of detail._
 
 
 ```ruby
-# EXAMPLE
-todo test if it builds and if it completes
-mobilenumbers test if it list the numbers in the diary entry 
-diary_entry test if it returns the amount of time necessary to read it 
-diary test if it adds todos and diary entries then show relevant entries 
+item test if it completes if it returns its name, amount and price and if quantity is reduced when one_less is called
+
 
 
 
