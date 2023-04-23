@@ -143,6 +143,8 @@ menu test if show items gives an aarray of price and name if it fails if array e
 test if add_item adds an item and if it fails if the item added is not an Item 
 test if available? shows true if quantity is greater than 0 if it returns false if 0 check if it fails if item is not on the menu
 
+order test if it constructs and shows an empty order if you can add to the order and show a the entire order if you can then 'checkout' and show the full order with itemised pricing if 'checkout' fails  if no item is added prior to checkout.
+```
 
 
 _Encode each example as a test. You can add to the above list as you go._

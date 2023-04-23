@@ -17,6 +17,6 @@ RSpec.describe "Integration test for takeaway" do
     order.add_to_order(item3,menu)
     order.add_to_order(item1,menu)
     expect(order.show_order).to eq ["item3: £30.0", "item3: £30.0", "item1: £10.0"]
-    expect(order.show_total_price).to eq "total price : £70.0"
+    expect(order.show_total_price).to eq "item3: £30.0, item3: £30.0, item1: £10.0, total price : £70.0"
   end
 end

@@ -15,9 +15,10 @@ class Order
   end
   
     def show_total_price
+      fail 'add item' unless @order.length >0
       price =@order.map do |item|
       item.price
       end.sum
-      return "total price : £#{price}"
+      return show_order.join(", ") +", total price : £#{price}"
     end
 end
