@@ -2,7 +2,8 @@ class Order
     def initialize
       @order = []
     end
-    
+    def send_message
+    end
     def add_to_order(item, menu)
       item.one_less
       @order << item
@@ -22,3 +23,4 @@ class Order
       return show_order.join(", ") +", total price : £#{price}"
     end
 end
+
